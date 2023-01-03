@@ -7,7 +7,8 @@ body {
 }
 
 .card {
-    width: 400px;
+    width: 800px;
+    /* max-width: 1200px; */
     background-color: #F3E5F5;
 }
 
@@ -16,6 +17,8 @@ body {
     background-color: #E1BEE7;
     cursor: pointer;
     padding: 10px 0px;
+    width: 12.5%;
+    margin: auto;
 }
 
 .first-block {
