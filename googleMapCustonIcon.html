@@ -27,7 +27,7 @@ const locations = [
   { lat: 25.034393946294266, lng: 121.56478920337617 },
   { lat: 25.03330520022631, lng: 121.58993759284304 },
   { lat: 25.04080957511679, lng: 121.56002560059703 },
-  { lat: 25.032216444431175, lng: 121.56182804485093 },
+  { lat: 25.039673175009867, lng: 121.56414352346185 },
   { lat: 25.031594293961863, lng: 121.5542320296024 }
 ];
 function initMap() {
@@ -39,7 +39,7 @@ function initMap() {
     center: cityhall,
   });
   
-  const labels = ["台北101","虎山生態步道","國父紀念館","西西南村","臨江街觀光夜市"];
+  const labels = ["台北101","虎山生態步道","國父紀念館","台北市政府","臨江街觀光夜市"];
   const marker_labels = "ABCDE";
   const markers = locations.map((position, i) => {
     const label = marker_labels[i];
@@ -48,12 +48,12 @@ function initMap() {
       label,
       icon: "placeholder.png"
     });
-    let infowindow = new google.maps.InfoWindow({
-                    content: labels[i],
-                    // ariaLabel: labels[i],
-                });
+    const infoWindow = new google.maps.InfoWindow({
+        content: "",
+        disableAutoPan: true,
+    });
     marker.addListener("click", () => {
-      //infoWindow.setContent(label);
+      infoWindow.setContent(labels[i]);
       infoWindow.open(map, marker);
     });
     return marker;
